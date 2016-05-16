@@ -1,0 +1,134 @@
+
+==================== Tidy Core ====================
+2016-05-16 10:29:10.290004 UTC
+
+Result size of Tidy Core = {terms: 47, types: 37, coercions: 9}
+
+Rec {
+Main.main_$s$wfoldlM'_loop [Occ=LoopBreaker]
+  :: ghc-prim-0.4.0.0:GHC.Prim.Int#
+     -> ghc-prim-0.4.0.0:GHC.Prim.Int# -> ghc-prim-0.4.0.0:GHC.Prim.Int#
+[GblId, Arity=2, Caf=NoCafRefs, Str=DmdType <L,U><L,U>]
+Main.main_$s$wfoldlM'_loop =
+  \ (sc_s94x :: ghc-prim-0.4.0.0:GHC.Prim.Int#)
+    (sc1_s94y :: ghc-prim-0.4.0.0:GHC.Prim.Int#) ->
+    case ghc-prim-0.4.0.0:GHC.Prim.tagToEnum#
+           @ Bool (ghc-prim-0.4.0.0:GHC.Prim.<=# sc1_s94y 100000000)
+    of _ [Occ=Dead] {
+      False -> sc_s94x;
+      True ->
+        Main.main_$s$wfoldlM'_loop
+          (ghc-prim-0.4.0.0:GHC.Prim.+# sc_s94x sc1_s94y)
+          (ghc-prim-0.4.0.0:GHC.Prim.+# sc1_s94y 1)
+    }
+end Rec }
+
+Main.main2 :: String
+[GblId,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=False, ConLike=False,
+         WorkFree=False, Expandable=False, Guidance=IF_ARGS [] 100 30}]
+Main.main2 =
+  case Main.main_$s$wfoldlM'_loop 0 1 of ww_s8Lf { __DEFAULT ->
+  case GHC.Show.$wshowSignedInt
+         0 ww_s8Lf (ghc-prim-0.4.0.0:GHC.Types.[] @ Char)
+  of _ [Occ=Dead] { (# ww5_a5kq, ww6_a5kr #) ->
+  ghc-prim-0.4.0.0:GHC.Types.: @ Char ww5_a5kq ww6_a5kr
+  }
+  }
+
+Main.main1
+  :: ghc-prim-0.4.0.0:GHC.Prim.State#
+       ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+     -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+             ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+           () #)
+[GblId,
+ Arity=1,
+ Str=DmdType <L,U>,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True, Guidance=IF_ARGS [0] 40 0}]
+Main.main1 =
+  \ (eta_a5qS [OS=OneShot]
+       :: ghc-prim-0.4.0.0:GHC.Prim.State#
+            ghc-prim-0.4.0.0:GHC.Prim.RealWorld) ->
+    GHC.IO.Handle.Text.hPutStr2
+      GHC.IO.Handle.FD.stdout
+      Main.main2
+      ghc-prim-0.4.0.0:GHC.Types.True
+      eta_a5qS
+
+main :: IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType <L,U>,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True,
+         Guidance=ALWAYS_IF(arity=0,unsat_ok=True,boring_ok=True)
+         Tmpl= Main.main1
+               `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+                       :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                             ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                           -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                                 () #))
+                          ~R# IO ())}]
+main =
+  Main.main1
+  `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+          :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+              -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                      ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                    () #))
+             ~R# IO ())
+
+Main.main3
+  :: ghc-prim-0.4.0.0:GHC.Prim.State#
+       ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+     -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+             ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+           () #)
+[GblId,
+ Arity=1,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True, Guidance=IF_ARGS [] 20 60}]
+Main.main3 =
+  GHC.TopHandler.runMainIO1
+    @ ()
+    (Main.main1
+     `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+             :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                 -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                         ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                       () #))
+                ~R# IO ()))
+
+:Main.main :: IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True,
+         Guidance=ALWAYS_IF(arity=0,unsat_ok=True,boring_ok=True)
+         Tmpl= Main.main3
+               `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+                       :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                             ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                           -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                                 () #))
+                          ~R# IO ())}]
+:Main.main =
+  Main.main3
+  `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+          :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+              -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                      ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                    () #))
+             ~R# IO ())
+
+

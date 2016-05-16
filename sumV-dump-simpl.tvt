@@ -1,0 +1,305 @@
+
+==================== Tidy Core ====================
+2016-05-16 10:29:08.943976 UTC
+
+Result size of Tidy Core = {terms: 150, types: 160, coercions: 40}
+
+Main.main5 :: [Char]
+[GblId,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=False, ConLike=False,
+         WorkFree=False, Expandable=False, Guidance=IF_ARGS [] 60 30}]
+Main.main5 =
+  case GHC.Show.$wshowSignedInt
+         0 100000000 (ghc-prim-0.4.0.0:GHC.Types.[] @ Char)
+  of _ [Occ=Dead] { (# ww5_a5gz, ww6_a5gA #) ->
+  ghc-prim-0.4.0.0:GHC.Types.: @ Char ww5_a5gz ww6_a5gA
+  }
+
+Main.main4 :: [Char]
+[GblId,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=False, ConLike=False,
+         WorkFree=False, Expandable=False, Guidance=IF_ARGS [] 150 0}]
+Main.main4 =
+  ghc-prim-0.4.0.0:GHC.CString.unpackAppendCString#
+    "Primitive.basicUnsafeNew: length to large: "# Main.main5
+
+Main.main3
+  :: forall s_a4PJ.
+     ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ
+     -> (# ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ, Vector Int #)
+[GblId,
+ Arity=1,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True, Guidance=IF_ARGS [0] 312 30}]
+Main.main3 =
+  \ (@ s_a4PJ)
+    (s1_a4PK [OS=OneShot]
+       :: ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ) ->
+    case ghc-prim-0.4.0.0:GHC.Classes.divInt# 9223372036854775807 8
+    of ww4_a70l { __DEFAULT ->
+    case ghc-prim-0.4.0.0:GHC.Prim.tagToEnum#
+           @ Bool (ghc-prim-0.4.0.0:GHC.Prim.># 100000000 ww4_a70l)
+    of _ [Occ=Dead] {
+      False ->
+        case ghc-prim-0.4.0.0:GHC.Prim.newByteArray#
+               @ (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                    (GHC.ST.ST s_a4PJ))
+               800000000
+               (s1_a4PK
+                `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                           (Sym
+                              (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                                 <s_a4PJ>_N)))_R
+                        :: ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ
+                           ~R# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                 (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                                    (GHC.ST.ST s_a4PJ))))
+        of _ [Occ=Dead] { (# ipv_a6Yw, ipv1_a6Yx #) ->
+        letrec {
+          $s$wa_s8MB [Occ=LoopBreaker]
+            :: ghc-prim-0.4.0.0:GHC.Prim.Int#
+               -> ghc-prim-0.4.0.0:GHC.Prim.Int#
+               -> ghc-prim-0.4.0.0:GHC.Prim.Int#
+               -> ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ
+               -> (# ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ, Int #)
+          [LclId, Arity=4, Str=DmdType <L,U><L,U><L,U><L,U>]
+          $s$wa_s8MB =
+            \ (sc_s8Mw :: ghc-prim-0.4.0.0:GHC.Prim.Int#)
+              (sc1_s8Mx :: ghc-prim-0.4.0.0:GHC.Prim.Int#)
+              (sc2_s8My :: ghc-prim-0.4.0.0:GHC.Prim.Int#)
+              (sc3_s8MA [OS=OneShot]
+                 :: ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ) ->
+              case ghc-prim-0.4.0.0:GHC.Prim.tagToEnum#
+                     @ Bool (ghc-prim-0.4.0.0:GHC.Prim.># sc2_s8My 0)
+              of _ [Occ=Dead] {
+                False -> (# sc3_s8MA, ghc-prim-0.4.0.0:GHC.Types.I# sc_s8Mw #);
+                True ->
+                  case ghc-prim-0.4.0.0:GHC.Prim.writeIntArray#
+                         @ (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                              (GHC.ST.ST s_a4PJ))
+                         ipv1_a6Yx
+                         sc_s8Mw
+                         sc1_s8Mx
+                         (sc3_s8MA
+                          `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                                     (Sym
+                                        (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                                           <s_a4PJ>_N)))_R
+                                  :: ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ
+                                     ~R# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                           (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                                              (GHC.ST.ST s_a4PJ))))
+                  of s'#_a7pI [OS=OneShot] { __DEFAULT ->
+                  $s$wa_s8MB
+                    (ghc-prim-0.4.0.0:GHC.Prim.+# sc_s8Mw 1)
+                    (ghc-prim-0.4.0.0:GHC.Prim.+# sc1_s8Mx 1)
+                    (ghc-prim-0.4.0.0:GHC.Prim.-# sc2_s8My 1)
+                    (s'#_a7pI
+                     `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                                (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                                   <s_a4PJ>_N))_R
+                             :: ghc-prim-0.4.0.0:GHC.Prim.State#
+                                  (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                                     (GHC.ST.ST s_a4PJ))
+                                ~R# ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ))
+                  }
+              }; } in
+        case $s$wa_s8MB
+               0
+               1
+               100000000
+               (ipv_a6Yw
+                `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                           (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                              <s_a4PJ>_N))_R
+                        :: ghc-prim-0.4.0.0:GHC.Prim.State#
+                             (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                                (GHC.ST.ST s_a4PJ))
+                           ~R# ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ))
+        of _ [Occ=Dead] { (# ipv6_a4LN, ipv7_a4LO #) ->
+        case ipv7_a4LO
+        of _ [Occ=Dead] { ghc-prim-0.4.0.0:GHC.Types.I# dt4_a71Q ->
+        case ghc-prim-0.4.0.0:GHC.Prim.unsafeFreezeByteArray#
+               @ (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                    (GHC.ST.ST s_a4PJ))
+               ipv1_a6Yx
+               (ipv6_a4LN
+                `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                           (Sym
+                              (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                                 <s_a4PJ>_N)))_R
+                        :: ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ
+                           ~R# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                 (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                                    (GHC.ST.ST s_a4PJ))))
+        of _ [Occ=Dead] { (# ipv2_a72U, ipv3_a72V #) ->
+        (# ipv2_a72U
+           `cast` ((ghc-prim-0.4.0.0:GHC.Prim.State#
+                      (primitive-0.6.1.0:Control.Monad.Primitive.TFCo:R:PrimStateST[0]
+                         <s_a4PJ>_N))_R
+                   :: ghc-prim-0.4.0.0:GHC.Prim.State#
+                        (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                           (GHC.ST.ST s_a4PJ))
+                      ~R# ghc-prim-0.4.0.0:GHC.Prim.State# s_a4PJ),
+           (Data.Vector.Primitive.Vector @ Int 0 dt4_a71Q ipv3_a72V)
+           `cast` (Sym Data.Vector.Unboxed.Base.NTCo:R:VectorInt[0]
+                   ; Sub (Sym Data.Vector.Unboxed.Base.TFCo:R:VectorInt[0])
+                   :: Data.Vector.Primitive.Vector Int ~R# Vector Int) #)
+        }
+        }
+        }
+        };
+      True ->
+        case error
+               @ (GHC.ST.ST
+                    s_a4PJ
+                    (Data.Vector.Primitive.Mutable.MVector
+                       (primitive-0.6.1.0:Control.Monad.Primitive.PrimState
+                          (GHC.ST.ST s_a4PJ))
+                       Int))
+               Main.main4
+        of wild_00 {
+        }
+    }
+    }
+
+Main.main2 :: String
+[GblId,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=False, ConLike=False,
+         WorkFree=False, Expandable=False, Guidance=IF_ARGS [] 216 30}]
+Main.main2 =
+  case (GHC.ST.runSTRep @ (Vector Int) Main.main3)
+       `cast` (Sub Data.Vector.Unboxed.Base.TFCo:R:VectorInt[0]
+               ; Data.Vector.Unboxed.Base.NTCo:R:VectorInt[0]
+               :: Vector Int ~R# Data.Vector.Primitive.Vector Int)
+  of _ [Occ=Dead]
+  { Data.Vector.Primitive.Vector ipv_s773 ipv1_s774 ipv2_s775 ->
+  letrec {
+    $s$wfoldlM'_loop_s8Mt [Occ=LoopBreaker]
+      :: ghc-prim-0.4.0.0:GHC.Prim.Int#
+         -> ghc-prim-0.4.0.0:GHC.Prim.Int# -> ghc-prim-0.4.0.0:GHC.Prim.Int#
+    [LclId, Arity=2, Str=DmdType <L,U><L,U>]
+    $s$wfoldlM'_loop_s8Mt =
+      \ (sc_s8Mr :: ghc-prim-0.4.0.0:GHC.Prim.Int#)
+        (sc1_s8Ms :: ghc-prim-0.4.0.0:GHC.Prim.Int#) ->
+        case ghc-prim-0.4.0.0:GHC.Prim.tagToEnum#
+               @ Bool (ghc-prim-0.4.0.0:GHC.Prim.>=# sc1_s8Ms ipv1_s774)
+        of _ [Occ=Dead] {
+          False ->
+            case ghc-prim-0.4.0.0:GHC.Prim.indexIntArray#
+                   ipv2_s775 (ghc-prim-0.4.0.0:GHC.Prim.+# ipv_s773 sc1_s8Ms)
+            of wild_a4Wg { __DEFAULT ->
+            $s$wfoldlM'_loop_s8Mt
+              (ghc-prim-0.4.0.0:GHC.Prim.+# sc_s8Mr wild_a4Wg)
+              (ghc-prim-0.4.0.0:GHC.Prim.+# sc1_s8Ms 1)
+            };
+          True -> sc_s8Mr
+        }; } in
+  case $s$wfoldlM'_loop_s8Mt 0 0 of ww_s8uB { __DEFAULT ->
+  case GHC.Show.$wshowSignedInt
+         0 ww_s8uB (ghc-prim-0.4.0.0:GHC.Types.[] @ Char)
+  of _ [Occ=Dead] { (# ww5_a5gz, ww6_a5gA #) ->
+  ghc-prim-0.4.0.0:GHC.Types.: @ Char ww5_a5gz ww6_a5gA
+  }
+  }
+  }
+
+Main.main1
+  :: ghc-prim-0.4.0.0:GHC.Prim.State#
+       ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+     -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+             ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+           () #)
+[GblId,
+ Arity=1,
+ Str=DmdType <L,U>,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True, Guidance=IF_ARGS [0] 40 0}]
+Main.main1 =
+  \ (eta_a4Xh [OS=OneShot]
+       :: ghc-prim-0.4.0.0:GHC.Prim.State#
+            ghc-prim-0.4.0.0:GHC.Prim.RealWorld) ->
+    GHC.IO.Handle.Text.hPutStr2
+      GHC.IO.Handle.FD.stdout
+      Main.main2
+      ghc-prim-0.4.0.0:GHC.Types.True
+      eta_a4Xh
+
+main :: IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType <L,U>,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True,
+         Guidance=ALWAYS_IF(arity=0,unsat_ok=True,boring_ok=True)
+         Tmpl= Main.main1
+               `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+                       :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                             ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                           -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                                 () #))
+                          ~R# IO ())}]
+main =
+  Main.main1
+  `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+          :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+              -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                      ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                    () #))
+             ~R# IO ())
+
+Main.main6
+  :: ghc-prim-0.4.0.0:GHC.Prim.State#
+       ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+     -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+             ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+           () #)
+[GblId,
+ Arity=1,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True, Guidance=IF_ARGS [] 20 60}]
+Main.main6 =
+  GHC.TopHandler.runMainIO1
+    @ ()
+    (Main.main1
+     `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+             :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                 -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                         ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                       () #))
+                ~R# IO ()))
+
+:Main.main :: IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Value=True, ConLike=True,
+         WorkFree=True, Expandable=True,
+         Guidance=ALWAYS_IF(arity=0,unsat_ok=True,boring_ok=True)
+         Tmpl= Main.main6
+               `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+                       :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                             ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+                           -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                                   ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                                 () #))
+                          ~R# IO ())}]
+:Main.main =
+  Main.main6
+  `cast` (Sym (ghc-prim-0.4.0.0:GHC.Types.NTCo:IO[0] <()>_R)
+          :: (ghc-prim-0.4.0.0:GHC.Prim.State#
+                ghc-prim-0.4.0.0:GHC.Prim.RealWorld
+              -> (# ghc-prim-0.4.0.0:GHC.Prim.State#
+                      ghc-prim-0.4.0.0:GHC.Prim.RealWorld,
+                    () #))
+             ~R# IO ())
+
+
